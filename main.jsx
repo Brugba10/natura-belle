@@ -1,10 +1,11 @@
+
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './BeautyShop.jsx'
+import BeautyShop from './BeautyShop.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <BeautyShop />
+  </React.StrictMode>
 )

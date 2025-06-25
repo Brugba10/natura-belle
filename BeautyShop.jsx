@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { ShoppingCart } from 'lucide-react';
 
 const products = [
@@ -39,20 +41,20 @@ export default function BeautyShop() {
       <h1 className="text-3xl font-bold text-center text-pink-700 mb-6">Natura Belleza</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {products.map((product) => (
-          <div key={product.id} className="rounded-2xl shadow-xl bg-white">
+          <Card key={product.id} className="rounded-2xl shadow-xl">
             <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded-t-2xl" />
-            <div className="p-4">
+            <CardContent className="p-4">
               <h2 className="font-semibold text-lg text-pink-700">{product.name}</h2>
               <p className="text-sm text-gray-600">{product.description}</p>
               <p className="mt-2 font-bold">S/ {product.price}</p>
-              <button
+              <Button
                 onClick={() => addToCart(product)}
-                className="mt-2 w-full bg-pink-600 hover:bg-pink-700 text-white py-2 px-4 rounded"
+                className="mt-2 w-full bg-pink-600 hover:bg-pink-700 text-white"
               >
-                <ShoppingCart size={16} className="inline-block mr-2" /> Agregar al carrito
-              </button>
-            </div>
-          </div>
+                <ShoppingCart size={16} className="mr-2" /> Agregar al carrito
+              </Button>
+            </CardContent>
+          </Card>
         ))}
       </div>
 
@@ -74,9 +76,9 @@ export default function BeautyShop() {
             </li>
           </ul>
         )}
-        <button className="mt-4 bg-green-600 hover:bg-green-700 text-white w-full py-2 px-4 rounded">
+        <Button className="mt-4 bg-green-600 hover:bg-green-700 text-white w-full">
           Finalizar pedido por WhatsApp
-        </button>
+        </Button>
       </div>
     </div>
   );
